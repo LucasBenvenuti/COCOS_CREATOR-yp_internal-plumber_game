@@ -72,7 +72,14 @@ export class PipeCollider_Behavior extends Component {
 
         self.pipeBehavior.canBeTouched = false;
 
-        PlumberGameController.instance.currentPipeCollision = self;
+        if(self.pipeBehavior.pathID == 0)
+        {
+            PlumberGameController.instance.currentPipeCollision = self;
+        }
+        else if(self.pipeBehavior.pathID == 1)
+        {
+            PlumberGameController.instance.currentPipeCollision_2 = self;
+        }
 
         self.changeAnimSpeed();
 

@@ -19,6 +19,11 @@ export class Pipe_Behavior extends Component {
     @property(Boolean)
     lastPipe: Boolean = false;
 
+    @property(Number)
+    pathID: number = 0;
+
+    indexOnPlumberGameControllerArray = 0;
+
     canBeTouched = true;
 
     startPipeCollider: PipeCollider_Behavior = null!;
@@ -96,6 +101,16 @@ export class Pipe_Behavior extends Component {
             if(invertedPipe.isLastPipe)
             {
                 invertedPipe.pipeBehavior.canBeTouched = false;
+
+                if(self.pathID == 0)
+                {
+                    PlumberGameController.instance.plumber_Completed = true;
+                }
+                else if(self.pathID == 1)
+                {
+                    PlumberGameController.instance.plumber_2_Completed = true;
+                }
+
                 PlumberGameController.instance.endPlumber(true);
             }
             else
@@ -123,6 +138,16 @@ export class Pipe_Behavior extends Component {
             if(normalPipe.isLastPipe)
             {
                 normalPipe.pipeBehavior.canBeTouched = false;
+
+                if(self.pathID == 0)
+                {
+                    PlumberGameController.instance.plumber_Completed = true;
+                }
+                else if(self.pathID == 1)
+                {
+                    PlumberGameController.instance.plumber_2_Completed = true;
+                }
+
                 PlumberGameController.instance.endPlumber(true);
             }
             else
