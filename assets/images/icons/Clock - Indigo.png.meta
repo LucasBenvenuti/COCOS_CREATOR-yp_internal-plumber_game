@@ -1,0 +1,74 @@
+{
+  "ver": "1.0.21",
+  "importer": "image",
+  "imported": true,
+  "uuid": "36bfda9c-f91b-4a2b-978e-8a691ab8b00b",
+  "files": [
+    ".png",
+    ".json"
+  ],
+  "subMetas": {
+    "6c48a": {
+      "importer": "texture",
+      "uuid": "36bfda9c-f91b-4a2b-978e-8a691ab8b00b@6c48a",
+      "displayName": "Clock - Indigo",
+      "id": "6c48a",
+      "name": "texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "36bfda9c-f91b-4a2b-978e-8a691ab8b00b"
+      },
+      "ver": "1.0.21",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "f9941": {
+      "importer": "sprite-frame",
+      "uuid": "36bfda9c-f91b-4a2b-978e-8a691ab8b00b@f9941",
+      "displayName": "Clock - Indigo",
+      "id": "f9941",
+      "name": "spriteFrame",
+      "userData": {
+        "trimType": "auto",
+        "trimThreshold": 1,
+        "rotated": false,
+        "offsetX": -24,
+        "offsetY": -15,
+        "trimX": 78,
+        "trimY": 127,
+        "width": 387,
+        "height": 367,
+        "rawWidth": 591,
+        "rawHeight": 591,
+        "borderTop": 0,
+        "borderBottom": 0,
+        "borderLeft": 0,
+        "borderRight": 0,
+        "packable": true,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "36bfda9c-f91b-4a2b-978e-8a691ab8b00b@6c48a",
+        "atlasUuid": ""
+      },
+      "ver": "1.0.9",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "hasAlpha": true,
+    "type": "sprite-frame",
+    "redirect": "36bfda9c-f91b-4a2b-978e-8a691ab8b00b@f9941"
+  }
+}
