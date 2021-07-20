@@ -120,7 +120,7 @@ export class PlumberGameController extends Component {
         if(!self.gameIsRunning)
             return;
 
-        if(self.plumberStartPipe)
+        if(self.plumberStartPipe && !self.plumberStartPipe_2)
         {
             self.blockInputEvents_box.enabled = true;
 
@@ -142,14 +142,17 @@ export class PlumberGameController extends Component {
         }
         else
         {
-            console.log("3Plumber start piece null!");
+            console.log("Plumber start piece null!");
         }
 
-        if(self.plumberStartPipe_2)
+        if(self.plumberStartPipe && self.plumberStartPipe_2)
         {
             self.blockInputEvents_box.enabled = true;
 
             self.animationSpeed = 2;
+
+            if(self.currentPipeCollision)
+                self.currentPipeCollision.changeAnimSpeed();
 
             if(self.currentPipeCollision_2)
                 self.currentPipeCollision_2.changeAnimSpeed();
@@ -161,6 +164,7 @@ export class PlumberGameController extends Component {
 
                 self.plumberAlreadyStarted = true;
 
+                self.plumberStartPipe.plumberStart();
                 self.plumberStartPipe_2.plumberStart();
             }
         }
