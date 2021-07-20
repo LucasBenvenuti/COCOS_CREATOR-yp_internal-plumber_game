@@ -1,5 +1,5 @@
 
-import { _decorator, Component, Node, game, CCFloat, AudioSource, tween, Tween, TweenSystem, find, Button, SystemEventType, Sprite } from 'cc';
+import { _decorator, Component, Node, game, CCFloat, AudioSource, tween, Tween, TweenSystem, find, Button, SystemEventType, Sprite, System, RichText, RichTextComponent } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('AudioController')
@@ -55,6 +55,7 @@ export class AudioController extends Component {
     }
 
     start(){
+        
     }
 
     public startGameSound(){

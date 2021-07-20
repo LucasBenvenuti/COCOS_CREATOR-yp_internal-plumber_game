@@ -1,5 +1,6 @@
 
 import { _decorator, Component, Node, BlockInputEvents, AnimationState, AnimationComponent, AnimationClip, AudioSource } from 'cc';
+import { DataController } from './DataController';
 import { PipeCollider_Behavior } from './PipeCollider_Behavior';
 import { Pipe_Behavior } from './Pipe_Behavior';
 const { ccclass, property } = _decorator;
@@ -14,6 +15,12 @@ export class PlumberGameController extends Component {
 
     @property(Node)
     plumberStartPipeNode_2: Node = null!;
+
+    @property([Node])
+    plumberStartPipeArray: Node[] = [];
+
+    @property([Node])
+    plumberStartPipeArray_2: Node[] = [];
 
     @property(BlockInputEvents)
     blockInputEvents_box: BlockInputEvents = null!;
@@ -37,18 +44,25 @@ export class PlumberGameController extends Component {
 
     onLoad() {
         var self = this;
-
-        if(PlumberGameController.instance != null && PlumberGameController.instance != self){
-            self.destroy();
-        }else{
-            PlumberGameController.instance = self;
+        
+        PlumberGameController.instance = self;
+        // if(PlumberGameController.instance != null && PlumberGameController.instance != self){
+        //         self.destroy();
+        //  }else{
+        
+        // }
+        self.plumberStartPipeNode = self.plumberStartPipeArray[DataController.instance.levelIndex];
+        //self.plumberStartPipeNode = self.plumberStartPipeArray[DataController.instance.levelIndex];
+        
+        if(self.plumberStartPipeNode)
+             self.plumberStartPipe = self.plumberStartPipeNode.getComponent(Pipe_Behavior);
+        
+        if(self.plumberStartPipeNode_2[DataController.instance.levelIndex]){
+            self.plumberStartPipe_2 = self.plumberStartPipe_2[DataController.instance.levelIndex];
         }
 
-        if(self.plumberStartPipeNode)
-            self.plumberStartPipe = self.plumberStartPipeNode.getComponent(Pipe_Behavior);
-
-        if(self.plumberStartPipeNode_2)
-            self.plumberStartPipe_2 = self.plumberStartPipeNode_2.getComponent(Pipe_Behavior);
+        // if(self.plumberStartPipeNode_2)
+        //     self.plumberStartPipe_2 = self.plumberStartPipeNode_2.getComponent(Pipe_Behavior);
 
         self.blockInputEvents_box.enabled = false;
     }
@@ -64,36 +78,36 @@ export class PlumberGameController extends Component {
         if(!self.gameIsRunning)
             return;
 
-        if(self.plumberStartPipe)
+        if(PlumberGameController.instance.plumberStartPipe)
         {
-            self.animationSpeed = 0.25;
+            PlumberGameController.instance.animationSpeed = 0.25;
 
-            if(self.currentPipeCollision)
-                self.currentPipeCollision.changeAnimSpeed();
+            if(PlumberGameController.instance.currentPipeCollision)
+                PlumberGameController.instance.currentPipeCollision.changeAnimSpeed();
 
-            self.plumberAlreadyStarted = true;
+            PlumberGameController.instance.plumberAlreadyStarted = true;
 
-            self.plumberStartPipe.plumberStart();
+            PlumberGameController.instance.plumberStartPipe.plumberStart();
         }
         else
         {
-            console.log("Plumber start piece null!");
+            console.log("1Plumber start piece null!");
         }
 
-        if(self.plumberStartPipe_2)
+        if(PlumberGameController.instance.plumberStartPipe_2)
         {
-            self.animationSpeed = 0.25;
+            PlumberGameController.instance.animationSpeed = 0.25;
 
-            if(self.currentPipeCollision_2)
-                self.currentPipeCollision_2.changeAnimSpeed();
+            if(PlumberGameController.instance.currentPipeCollision_2)
+                PlumberGameController.instance.currentPipeCollision_2.changeAnimSpeed();
 
-            self.plumberAlreadyStarted = true;
+            PlumberGameController.instance.plumberAlreadyStarted = true;
 
-            self.plumberStartPipe_2.plumberStart();
+            PlumberGameController.instance.plumberStartPipe_2.plumberStart();
         }
         else
         {
-            console.log("Plumber start piece null!");
+            console.log("2Plumber start piece 2 null!");
         }
     }
 
@@ -103,47 +117,50 @@ export class PlumberGameController extends Component {
         if(!self.gameIsRunning)
             return;
 
-        if(self.plumberStartPipe)
+        console.log(self.plumberStartPipe);
+        console.log(PlumberGameController.instance.plumberStartPipe);
+        if(PlumberGameController.instance.plumberStartPipe)
         {
-            self.blockInputEvents_box.enabled = true;
+            PlumberGameController.instance.blockInputEvents_box.enabled = true;
 
-            self.animationSpeed = 2;
+            PlumberGameController.instance.animationSpeed = 2;
 
-            if(self.currentPipeCollision)
-                self.currentPipeCollision.changeAnimSpeed();
+            if(PlumberGameController.instance.currentPipeCollision)
+                PlumberGameController.instance.currentPipeCollision.changeAnimSpeed();
 
-            if(!self.plumberAlreadyStarted)
+            if(!PlumberGameController.instance.plumberAlreadyStarted)
             {
                 //STOP HERE TIMER
                 console.log("STOP HERE THE TIMER");
 
-                self.plumberAlreadyStarted = true;
+                //self.plumberAlreadyStarted = true;
+                PlumberGameController.instance.plumberAlreadyStarted = true;
 
-                self.plumberStartPipe.plumberStart();
+                PlumberGameController.instance.plumberStartPipe.plumberStart();
             }
         }
         else
         {
-            console.log("Plumber start piece null!");
+            console.log("3Plumber start piece null!");
         }
 
-        if(self.plumberStartPipe_2)
+        if(PlumberGameController.instance.plumberStartPipe_2)
         {
-            self.blockInputEvents_box.enabled = true;
+            PlumberGameController.instance.blockInputEvents_box.enabled = true;
 
-            self.animationSpeed = 2;
+            PlumberGameController.instance.animationSpeed = 2;
 
-            if(self.currentPipeCollision_2)
-                self.currentPipeCollision_2.changeAnimSpeed();
+            if(PlumberGameController.instance.currentPipeCollision_2)
+                PlumberGameController.instance.currentPipeCollision_2.changeAnimSpeed();
 
-            if(!self.plumberAlreadyStarted)
+            if(!PlumberGameController.instance.plumberAlreadyStarted)
             {
                 //STOP HERE TIMER
                 console.log("STOP HERE THE TIMER");
 
-                self.plumberAlreadyStarted = true;
+                PlumberGameController.instance.plumberAlreadyStarted = true;
 
-                self.plumberStartPipe_2.plumberStart();
+                PlumberGameController.instance.plumberStartPipe_2.plumberStart();
             }
         }
         else
@@ -157,13 +174,28 @@ export class PlumberGameController extends Component {
 
         if(win)
         {
-            if(self.plumberStartPipe && !self.plumberStartPipe_2)
-            {
-                if(self.plumber_Completed)
-                {
-                    self.blockInputEvents_box.enabled = true;
+            // if(self.plumberStartPipe && !self.plumberStartPipe_2)
+            // {
+            //     if(self.plumber_Completed)
+            //     {
+            //         self.blockInputEvents_box.enabled = true;
 
-                    self.gameIsRunning = false;
+            //         self.gameIsRunning = false;
+    
+            //         console.log("WIN!");
+            //     }
+            //     else
+            //     {
+            //         console.log("NOT COMPLETED YET...");
+            //     }
+            // }
+            if(PlumberGameController.instance.plumberStartPipe && !PlumberGameController.instance.plumberStartPipe_2)
+            {
+                if(PlumberGameController.instance.plumber_Completed)
+                {
+                    PlumberGameController.instance.blockInputEvents_box.enabled = true;
+
+                    PlumberGameController.instance.gameIsRunning = false;
     
                     console.log("WIN!");
                 }
@@ -173,13 +205,28 @@ export class PlumberGameController extends Component {
                 }
             }
 
-            if(self.plumberStartPipe_2)
-            {
-                if(self.plumber_Completed && self.plumber_2_Completed)
-                {
-                    self.blockInputEvents_box.enabled = true;
+            // if(self.plumberStartPipe_2)
+            // {
+            //     if(self.plumber_Completed && self.plumber_2_Completed)
+            //     {
+            //         self.blockInputEvents_box.enabled = true;
 
-                    self.gameIsRunning = false;
+            //         self.gameIsRunning = false;
+    
+            //         console.log("WIN!");
+            //     }
+            //     else
+            //     {
+            //         console.log("WAIT OTHER PLUMBER TO COMPLETE!");
+            //     }
+            // }
+            if(PlumberGameController.instance.plumberStartPipe_2)
+            {
+                if(PlumberGameController.instance.plumber_Completed && PlumberGameController.instance.plumber_2_Completed)
+                {
+                    PlumberGameController.instance.blockInputEvents_box.enabled = true;
+
+                    PlumberGameController.instance.gameIsRunning = false;
     
                     console.log("WIN!");
                 }
@@ -192,17 +239,17 @@ export class PlumberGameController extends Component {
         }
         else
         {
-            self.blockInputEvents_box.enabled = true;
+            PlumberGameController.instance.blockInputEvents_box.enabled = true;
 
-            self.animationSpeed = 0;
+            PlumberGameController.instance.animationSpeed = 0;
 
-            self.gameIsRunning = false;
+            PlumberGameController.instance.gameIsRunning = false;
 
-            if(self.currentPipeCollision)
-                self.currentPipeCollision.changeAnimSpeed();
+            if(PlumberGameController.instance.currentPipeCollision)
+                PlumberGameController.instance.currentPipeCollision.changeAnimSpeed();
             
-            if(self.currentPipeCollision_2)
-                self.currentPipeCollision_2.changeAnimSpeed();
+            if(PlumberGameController.instance.currentPipeCollision_2)
+                PlumberGameController.instance.currentPipeCollision_2.changeAnimSpeed();
 
             console.log("LOSE...");
         }

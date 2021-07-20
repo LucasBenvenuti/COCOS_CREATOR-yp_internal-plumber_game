@@ -1,4 +1,5 @@
 import { _decorator, Component, Node, EventTouch, tween, Quat, CCFloat, Vec3, AnimationComponent } from 'cc';
+import { AudioController } from './AudioController';
 import { PipeCollider_Behavior } from './PipeCollider_Behavior';
 import { PlumberGameController } from './PlumberGameController';
 
@@ -57,6 +58,8 @@ export class Pipe_Behavior extends Component {
 
         let currentRotation = new Vec3(self.node.eulerAngles);
         let goToRotation_Z = new Vec3(currentRotation.x, currentRotation.y, currentRotation.z - 90);
+
+        AudioController.instance.playAudioSource(3);
 
         tween(currentRotation).to(0.5, goToRotation_Z, {
             easing: "cubicInOut",
@@ -118,6 +121,7 @@ export class Pipe_Behavior extends Component {
                 console.log("CONTINUE HERE WITH INVERTED!!!!");
                 self.invertedPipeCollider.pipe_Collision.startPipeAnimation();
             }
+            AudioController.instance.playAudioSource(4);
         }
         else
         {
@@ -128,17 +132,17 @@ export class Pipe_Behavior extends Component {
     
     plumberInternalEnd_Inverted() {
         var self = this;
-
+        
         console.log("INVERTED - FINISHED FRAMES - FUNCTION CALLED BY ANIMATION EVENT");
-
+        
         if(self.normalPipeCollider.pipe_Collision)
         {
             let normalPipe = self.normalPipeCollider.pipe_Collision;
-
+            
             if(normalPipe.isLastPipe)
             {
                 normalPipe.pipeBehavior.canBeTouched = false;
-
+                
                 if(self.pathID == 0)
                 {
                     PlumberGameController.instance.plumber_Completed = true;
@@ -147,7 +151,7 @@ export class Pipe_Behavior extends Component {
                 {
                     PlumberGameController.instance.plumber_2_Completed = true;
                 }
-
+                
                 PlumberGameController.instance.endPlumber(true);
             }
             else
@@ -155,6 +159,7 @@ export class Pipe_Behavior extends Component {
                 console.log("CONTINUE HERE WITH NORMAL!!!!");
                 self.normalPipeCollider.pipe_Collision.startPipeAnimation();
             }
+            AudioController.instance.playAudioSource(4);
         }
         else
         {

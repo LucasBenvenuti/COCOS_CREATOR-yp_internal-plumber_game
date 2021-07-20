@@ -2,7 +2,7 @@
   "ver": "1.0.21",
   "importer": "image",
   "imported": true,
-  "uuid": "d2079843-700e-4a56-b7dd-6e5a8c2a9040",
+  "uuid": "5cd68654-420f-4865-a0ce-04e32dce92b6",
   "files": [
     ".png",
     ".json"
@@ -10,8 +10,8 @@
   "subMetas": {
     "6c48a": {
       "importer": "texture",
-      "uuid": "d2079843-700e-4a56-b7dd-6e5a8c2a9040@6c48a",
-      "displayName": "CanoInicio",
+      "uuid": "5cd68654-420f-4865-a0ce-04e32dce92b6@6c48a",
+      "displayName": "SiloFundoFullHD",
       "id": "6c48a",
       "name": "texture",
       "userData": {
@@ -22,7 +22,7 @@
         "mipfilter": "none",
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "d2079843-700e-4a56-b7dd-6e5a8c2a9040"
+        "imageUuidOrDatabaseUri": "5cd68654-420f-4865-a0ce-04e32dce92b6"
       },
       "ver": "1.0.21",
       "imported": true,
@@ -33,29 +33,29 @@
     },
     "f9941": {
       "importer": "sprite-frame",
-      "uuid": "d2079843-700e-4a56-b7dd-6e5a8c2a9040@f9941",
-      "displayName": "CanoInicio",
+      "uuid": "5cd68654-420f-4865-a0ce-04e32dce92b6@f9941",
+      "displayName": "SiloFundoFullHD",
       "id": "f9941",
       "name": "spriteFrame",
       "userData": {
         "trimType": "auto",
         "trimThreshold": 1,
         "rotated": false,
-        "offsetX": -1,
-        "offsetY": 58.5,
-        "trimX": 238,
+        "offsetX": 0,
+        "offsetY": 0,
+        "trimX": 0,
         "trimY": 0,
-        "width": 546,
-        "height": 907,
-        "rawWidth": 1024,
-        "rawHeight": 1024,
+        "width": 1920,
+        "height": 1080,
+        "rawWidth": 1920,
+        "rawHeight": 1080,
         "borderTop": 0,
         "borderBottom": 0,
         "borderLeft": 0,
         "borderRight": 0,
         "packable": true,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "d2079843-700e-4a56-b7dd-6e5a8c2a9040@6c48a",
+        "imageUuidOrDatabaseUri": "5cd68654-420f-4865-a0ce-04e32dce92b6@6c48a",
         "atlasUuid": ""
       },
       "ver": "1.0.9",
@@ -69,6 +69,6 @@
   "userData": {
     "hasAlpha": true,
     "type": "sprite-frame",
-    "redirect": "d2079843-700e-4a56-b7dd-6e5a8c2a9040@f9941"
+    "redirect": "5cd68654-420f-4865-a0ce-04e32dce92b6@f9941"
   }
 }

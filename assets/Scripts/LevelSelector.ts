@@ -54,7 +54,7 @@ export class LevelSelector extends Component {
                         var selectedLevelButton = this.levelButton[levelIndex];
                         selectedLevelButton.interactable = false;
                         if(SceneController.instance){
-                            SceneController.instance.changeScene("Game");
+                            SceneController.instance.changeScene('Tests');
                             this.scheduleOnce(()=>{
                                 selectedLevelButton.interactable = true;
                             },1);
