@@ -4,6 +4,7 @@ import { AudioController } from './AudioController';
 import { ButtonsHelper } from './ButtonsHelper';
 import { DataController } from './DataController';
 import { FeedbackController } from './FeedbackController';
+import { PlumberGameController } from './PlumberGameController';
 import { SceneController } from './SceneController';
 const { ccclass, property } = _decorator;
 
@@ -16,7 +17,7 @@ export class GameController extends Component {
     backNode: Node;
 
     @property(Node)
-    winNode: Node;
+    goNode: Node;
 
     @property(Node)
     loseNode: Node;
@@ -33,25 +34,11 @@ export class GameController extends Component {
         }
         if(ButtonsHelper.instance){
             ButtonsHelper.instance.setButtonsScaleAnim(0.08, 0.75);
-            ButtonsHelper.instance.setEventFunction(this.winNode, () =>{ 
-                if(DataController.instance.levelIndex != DataController.instance.maxLevelIndex){
-                    this.feedBackController.playerWin();
-                } else{
-                    this.feedBackController.playerFinishGame();
-                }
-        }, this);
-        ButtonsHelper.instance.setEventFunction(this.loseNode, () =>{  
-            this.feedBackController.playerLose();
+            ButtonsHelper.instance.setEventFunction(this.goNode, () =>{ 
+               PlumberGameController.instance.startPlumberWithGoButton();
         }, this);
         ButtonsHelper.instance.setEventFunction(this.backNode, () =>{  
-          if(SceneController.instance){
-              if(DataController.instance){
-                  DataController.instance.returningFromDefaultScene = true;
-                  SceneController.instance.changeScene('sampleScene');
-              }
-          }else{
-              console.log("Scene Controller doesnt exist");
-          }
+            SceneController.instance.changeScene('sampleScene');
         }, this);
     }
 }

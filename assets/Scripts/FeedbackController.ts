@@ -78,7 +78,7 @@ export class FeedbackController extends Component {
         DataController.instance.timeIsRunning = false;
 
         self.feedbackTitleText.string = "Parabéns!";
-        self.feedbackContentText.string = "Você encontrou todos os erros.";
+        self.feedbackContentText.string = "Você encontrou o caminho.";
         self.feedbackBalloonText.string = "Show!";
         self.feedbackSmileSprite.spriteFrame = this.feedbackSmileSpriteFrame[0];
         self.starsContainer.active = true;

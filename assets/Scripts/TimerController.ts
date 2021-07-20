@@ -3,6 +3,7 @@ import { _decorator, Component, Node, Label, CCInteger } from 'cc';
 import { AudioController } from './AudioController';
 import { DataController } from './DataController';
 import { FeedbackController } from './FeedbackController';
+import { PlumberGameController } from './PlumberGameController';
 const { ccclass, property } = _decorator;
 
 @ccclass('TimerController')
@@ -40,7 +41,8 @@ export class TimerController extends Component {
             if(this.startTime <= 0){
                 this.timerText.string = "0";
                 DataController.instance.timeIsRunning = false;
-                this.feedbackContainer.playerLose();
+                PlumberGameController.instance.startPlumberWhenTimerGoesZero();
+                //this.feedbackContainer.playerLose();
             }
         }
     }
