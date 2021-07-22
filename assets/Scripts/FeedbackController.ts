@@ -106,7 +106,7 @@ export class FeedbackController extends Component {
         animation.play('fadeInScene');
 
         AudioController.instance.stopLowSecTimer();
-        AudioController.instance.playAudioSource(2);
+        // AudioController.instance.playAudioSource(2);
     }
     
     public playerFinishGame(){

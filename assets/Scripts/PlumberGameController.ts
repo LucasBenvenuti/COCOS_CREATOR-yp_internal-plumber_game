@@ -1,5 +1,6 @@
 
 import { _decorator, Component, Node, BlockInputEvents, AnimationState, AnimationComponent, AnimationClip, AudioSource } from 'cc';
+import { AudioController } from './AudioController';
 import { DataController } from './DataController';
 import { FeedbackController } from './FeedbackController';
 import { PipeCollider_Behavior } from './PipeCollider_Behavior';
@@ -229,8 +230,13 @@ export class PlumberGameController extends Component {
             
             if(self.currentPipeCollision_2)
             self.currentPipeCollision_2.changeAnimSpeed();
+
+            AudioController.instance.playAudioSource(2);
+
+            self.scheduleOnce(()=>{
+                this.feedBackController.playerLose();
+            }, 1);
             
-            this.feedBackController.playerLose();
             console.log("LOSE...");
         }
     }

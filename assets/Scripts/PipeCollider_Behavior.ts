@@ -42,6 +42,10 @@ export class PipeCollider_Behavior extends Component {
             console.log("PIPE_BEHAVIOR NOT SETTED...");
         }
 
+        self.particles = self.node.getComponentInChildren(ParticleSystemComponent);
+
+        console.log(self.particles);
+
         let collider = self.getComponent(Collider);
         if (collider) {
             collider.on("onTriggerEnter", self.onTriggerEnter, self);
