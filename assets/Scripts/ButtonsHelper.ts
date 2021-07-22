@@ -16,13 +16,19 @@ export class ButtonsHelper extends Component {
         }
     }
 
-    public setEventFunction(eventNode: Node, eventFunction: Function, eventThis: any){
+     public setEventFunction(eventNode: Node, eventFunction: Function, eventThis: any){
         eventNode.on(SystemEventType.TOUCH_START, () =>{
             setTimeout(() => {
+                if(eventNode.getComponent(Button) != null){
+                    eventNode.getComponent(Button).interactable = false;
+                }
                 eventNode.pauseSystemEvents(true);
                 eventFunction();
             }, 80);
-        }, eventThis)
+            if(eventNode.getComponent(Button) != null){
+                eventNode.getComponent(Button).interactable = true;
+            }   
+        }, eventThis);
     }
 
     //transitionType 0->NONE 1->COLOR 2->SPRITE 3->SCALE

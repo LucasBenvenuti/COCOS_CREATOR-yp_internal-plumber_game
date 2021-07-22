@@ -183,7 +183,7 @@
     "blockInputEvents": {
       "__id__": 24
     },
-    "preloadSceneName": "Game",
+    "preloadSceneName": "Tests",
     "_id": "6aAWszlOtLs6dKJPRppQxQ"
   },
   {
@@ -667,7 +667,7 @@
     "_priority": 1073741824,
     "_fov": 45,
     "_fovAxis": 0,
-    "_orthoHeight": 540,
+    "_orthoHeight": 633.6633663366337,
     "_near": 1,
     "_far": 2000,
     "_color": {
@@ -2564,8 +2564,8 @@
     "_prefab": null,
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
+      "x": 3,
+      "y": 4,
       "z": 0
     },
     "_lrot": {
@@ -2577,9 +2577,9 @@
     },
     "_lscale": {
       "__type__": "cc.Vec3",
-      "x": 1.7,
-      "y": 1.7,
-      "z": 1.7
+      "x": 1,
+      "y": 1,
+      "z": 1
     },
     "_layer": 33554432,
     "_euler": {
@@ -2603,8 +2603,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 20,
-      "height": 25
+      "width": 51,
+      "height": 51
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -2645,7 +2645,7 @@
     },
     "_type": 0,
     "_fillType": 0,
-    "_sizeMode": 0,
+    "_sizeMode": 2,
     "_fillCenter": {
       "__type__": "cc.Vec2",
       "x": 0,
@@ -2653,7 +2653,7 @@
     },
     "_fillStart": 0,
     "_fillRange": 0,
-    "_isTrimmedMode": true,
+    "_isTrimmedMode": false,
     "_useGrayscale": false,
     "_atlas": null,
     "_id": "3b8mTG9B9N14vuRV6cHx1b"
@@ -2908,8 +2908,8 @@
     "_prefab": null,
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
+      "x": 3,
+      "y": 4,
       "z": 0
     },
     "_lrot": {
@@ -2921,9 +2921,9 @@
     },
     "_lscale": {
       "__type__": "cc.Vec3",
-      "x": 1.7,
-      "y": 1.7,
-      "z": 1.7
+      "x": 1,
+      "y": 1,
+      "z": 1
     },
     "_layer": 33554432,
     "_euler": {
@@ -2947,8 +2947,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 20,
-      "height": 25
+      "width": 51,
+      "height": 51
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -2989,7 +2989,7 @@
     },
     "_type": 0,
     "_fillType": 0,
-    "_sizeMode": 0,
+    "_sizeMode": 2,
     "_fillCenter": {
       "__type__": "cc.Vec2",
       "x": 0,
@@ -2997,7 +2997,7 @@
     },
     "_fillStart": 0,
     "_fillRange": 0,
-    "_isTrimmedMode": true,
+    "_isTrimmedMode": false,
     "_useGrayscale": false,
     "_atlas": null,
     "_id": "8auPIFM9pMib+mUpiYyX1S"
