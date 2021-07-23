@@ -1,5 +1,5 @@
 
-import { _decorator, Component, Node, BlockInputEvents, AnimationState, AnimationComponent, AnimationClip, AudioSource } from 'cc';
+import { _decorator, Component, Node, BlockInputEvents, AnimationState, AnimationComponent, AnimationClip, AudioSource, ParticleSystemComponent } from 'cc';
 import { AudioController } from './AudioController';
 import { DataController } from './DataController';
 import { FeedbackController } from './FeedbackController';
@@ -23,6 +23,13 @@ export class PlumberGameController extends Component {
 
     @property([Node])
     plumberStartPipeArray_2: Node[] = [];
+
+    @property(AnimationComponent)
+    truckAnimation: AnimationComponent;
+
+    @property(ParticleSystemComponent)
+    truckParticles: ParticleSystemComponent = null!;
+
 
     @property(BlockInputEvents)
     blockInputEvents_box: BlockInputEvents = null!;
@@ -121,6 +128,8 @@ export class PlumberGameController extends Component {
         if(!self.gameIsRunning)
             return;
 
+
+        DataController.instance.timeIsRunning = false;    
         if(self.plumberStartPipe && !self.plumberStartPipe_2)
         {
             self.blockInputEvents_box.enabled = true;
@@ -243,10 +252,6 @@ export class PlumberGameController extends Component {
 
 
     winFunction(){
-        if(DataController.instance.levelIndex != DataController.instance.maxLevelIndex){
-            this.feedBackController.playerWin();
-        }else{
-            this.feedBackController.playerFinishGame();
-        }
+        this.truckAnimation.play('Caminhao_GoAway');
     }
 }
