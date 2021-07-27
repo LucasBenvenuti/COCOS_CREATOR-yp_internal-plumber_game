@@ -1,5 +1,5 @@
 
-import { _decorator, Component, Node, Label, CCInteger } from 'cc';
+import { _decorator, Component, Node, Label, CCInteger, Sprite } from 'cc';
 import { AudioController } from './AudioController';
 import { DataController } from './DataController';
 import { FeedbackController } from './FeedbackController';
@@ -15,23 +15,27 @@ export class TimerController extends Component {
     @property(Label)
     timerText: Label;
 
+    @property(Sprite)
+    timerProgressSprite: Sprite;
+
     @property(FeedbackController)
     feedbackContainer: FeedbackController;
 
     // timeIsRunning: boolean = true;
 
     countdownStartBool = false;
-    
+    fixedStartTime: number;
     start ()
     {
         DataController.instance.timeIsRunning = true;
+        this.fixedStartTime = this.startTime;
     }
 
     update (deltaTime: number) {
         if(DataController.instance.timeIsRunning){
             this.startTime -= deltaTime;
             this.timerText.string = Math.round(this.startTime).toString();
-
+            this.fillProgressTimerSprite();
             if (this.startTime <= 5.5 && !this.countdownStartBool) {
                 this.countdownStartBool = true;
 
@@ -45,6 +49,11 @@ export class TimerController extends Component {
                 //this.feedbackContainer.playerLose();
             }
         }
+    }
+
+    public fillProgressTimerSprite(){
+        var timerNumber = Math.round(this.startTime) / this.fixedStartTime;
+        this.timerProgressSprite.fillRange = timerNumber;
     }
     
 }
