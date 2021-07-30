@@ -95,7 +95,7 @@ export class Pipe_Behavior extends Component {
     plumberInternalEnd_Normal() {
         var self = this;
 
-        console.log("NORMAL - FINISHED FRAMES - FUNCTION CALLED BY ANIMATION EVENT");
+        //console.log("NORMAL - FINISHED FRAMES - FUNCTION CALLED BY ANIMATION EVENT");
 
         if(self.invertedPipeCollider.pipe_Collision)
         {
@@ -118,7 +118,7 @@ export class Pipe_Behavior extends Component {
             }
             else
             {
-                console.log("CONTINUE HERE WITH INVERTED!!!!");
+                //console.log("CONTINUE HERE WITH INVERTED!!!!");
                 self.invertedPipeCollider.pipe_Collision.startPipeAnimation();
             }
             AudioController.instance.playAudioSource(4);
@@ -133,7 +133,7 @@ export class Pipe_Behavior extends Component {
     plumberInternalEnd_Inverted() {
         var self = this;
         
-        console.log("INVERTED - FINISHED FRAMES - FUNCTION CALLED BY ANIMATION EVENT");
+        //console.log("INVERTED - FINISHED FRAMES - FUNCTION CALLED BY ANIMATION EVENT");
         
         if(self.normalPipeCollider.pipe_Collision)
         {
@@ -156,7 +156,7 @@ export class Pipe_Behavior extends Component {
             }
             else
             {                
-                console.log("CONTINUE HERE WITH NORMAL!!!!");
+                //console.log("CONTINUE HERE WITH NORMAL!!!!");
                 self.normalPipeCollider.pipe_Collision.startPipeAnimation();
             }
             AudioController.instance.playAudioSource(4);

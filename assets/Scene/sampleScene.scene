@@ -667,7 +667,7 @@
     "_priority": 1073741824,
     "_fov": 45,
     "_fovAxis": 0,
-    "_orthoHeight": 540,
+    "_orthoHeight": 733.0637636080871,
     "_near": 1,
     "_far": 2000,
     "_color": {
@@ -16893,7 +16893,7 @@
       "__uuid__": "3ccc42b7-462d-4908-ab64-619b1e141fcd",
       "__expectedType__": "cc.AudioClip"
     },
-    "_loop": false,
+    "_loop": true,
     "_playOnAwake": false,
     "_volume": 1,
     "_id": "1dst1ec/JFxYLTmf2niwlw"

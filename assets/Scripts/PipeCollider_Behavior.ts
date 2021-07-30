@@ -39,12 +39,12 @@ export class PipeCollider_Behavior extends Component {
         }
         else
         {
-            console.log("PIPE_BEHAVIOR NOT SETTED...");
+            //console.log("PIPE_BEHAVIOR NOT SETTED...");
         }
 
         self.particles = self.node.getComponentInChildren(ParticleSystemComponent);
 
-        console.log(self.particles);
+        //console.log(self.particles);
 
         let collider = self.getComponent(Collider);
         if (collider) {
@@ -89,7 +89,7 @@ export class PipeCollider_Behavior extends Component {
 
         if(self.isNormalDirection)
         {
-            console.log("Started NormalDirection animation");
+            //console.log("Started NormalDirection animation");
 
             //START HERE NORMAL ANIMATION
             if(self.pipeBehavior.pipeIsCurved)
@@ -103,7 +103,7 @@ export class PipeCollider_Behavior extends Component {
         }
         else
         {
-            console.log("Started InvertedDirection animation");
+            //console.log("Started InvertedDirection animation");
 
             //START HERE INVERTED ANIMATION
             if(self.pipeBehavior.pipeIsCurved)

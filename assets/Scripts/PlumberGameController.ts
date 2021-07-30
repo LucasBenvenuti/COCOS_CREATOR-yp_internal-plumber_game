@@ -81,7 +81,7 @@ export class PlumberGameController extends Component {
     startPlumberWhenTimerGoesZero() {
         var self = this;
 
-        console.log("CALL THIS FUNCTION ON TIMER!")
+        //console.log("CALL THIS FUNCTION ON TIMER!")
 
         if(self.plumberAlreadyStarted)
             return;
@@ -102,7 +102,7 @@ export class PlumberGameController extends Component {
         }
         else
         {
-            console.log("1Plumber start piece null!");
+            //console.log("1Plumber start piece null!");
         }
 
         if(self.plumberStartPipe_2)
@@ -118,7 +118,7 @@ export class PlumberGameController extends Component {
         }
         else
         {
-            console.log("2Plumber start piece 2 null!");
+            //console.log("2Plumber start piece 2 null!");
         }
     }
 
@@ -142,7 +142,7 @@ export class PlumberGameController extends Component {
             if(!self.plumberAlreadyStarted)
             {
                 //STOP HERE TIMER
-                console.log("STOP HERE THE TIMER");
+                //console.log("STOP HERE THE TIMER");
 
                 //self.plumberAlreadyStarted = true;
                 self.plumberAlreadyStarted = true;
@@ -152,7 +152,7 @@ export class PlumberGameController extends Component {
         }
         else
         {
-            console.log("Plumber start piece null!");
+            //console.log("Plumber start piece null!");
         }
 
         if(self.plumberStartPipe && self.plumberStartPipe_2)
@@ -170,7 +170,7 @@ export class PlumberGameController extends Component {
             if(!self.plumberAlreadyStarted)
             {
                 //STOP HERE TIMER
-                console.log("STOP HERE THE TIMER");
+                //console.log("STOP HERE THE TIMER");
 
                 self.plumberAlreadyStarted = true;
 
@@ -180,7 +180,7 @@ export class PlumberGameController extends Component {
         }
         else
         {
-            console.log("Plumber start piece null!");
+            //console.log("Plumber start piece null!");
         }
     }
 
@@ -198,12 +198,12 @@ export class PlumberGameController extends Component {
 
                     self.gameIsRunning = false;
     
-                    console.log("WIN!");
+                    //console.log("WIN!");
                      self.winFunction();
                 }
                 else
                 {
-                    console.log("NOT COMPLETED YET...");
+                    //console.log("NOT COMPLETED YET...");
                 }
             }
             
@@ -216,12 +216,12 @@ export class PlumberGameController extends Component {
                     
                     self.gameIsRunning = false;
                     
-                    console.log("WIN!");
+                    //console.log("WIN!");
                     self.winFunction();
                 }
                 else
                 {
-                    console.log("WAIT OTHER PLUMBER TO COMPLETE!");
+                    //console.log("WAIT OTHER PLUMBER TO COMPLETE!");
                 }
             }
             
@@ -246,7 +246,7 @@ export class PlumberGameController extends Component {
                 this.feedBackController.playerLose();
             }, 1);
             
-            console.log("LOSE...");
+            //console.log("LOSE...");
         }
     }
 
