@@ -50,20 +50,20 @@ export class TutorialController extends Component {
     }
     
     start(){
-    //     if(ButtonsHelper.instance){
-    //         ButtonsHelper.instance.setEventFunction(this.openButtonNode, () =>{
-    //         this.showTutorial();
-    //     }, this)
-    //     ButtonsHelper.instance.setEventFunction(this.closeButtonNode, () =>{
-    //         this.hideTutorial();
-    //     }, this)
-    //     ButtonsHelper.instance.setEventFunction(this.rightButton, () =>{
-    //         this.scrollToRight();
-    //     }, this)
-    //     ButtonsHelper.instance.setEventFunction(this.leftButton, () =>{
-    //         this.scrollToLeft();
-    //     }, this)
-    // }
+         if(ButtonsHelper.instance){
+             ButtonsHelper.instance.setEventFunction(this.openButtonNode, () =>{
+             this.showTutorial();
+         }, this)
+         ButtonsHelper.instance.setEventFunction(this.closeButtonNode, () =>{
+             this.hideTutorial();
+         }, this)
+         ButtonsHelper.instance.setEventFunction(this.rightButton, () =>{
+             this.scrollToRight();
+         }, this)
+         ButtonsHelper.instance.setEventFunction(this.leftButton, () =>{
+             this.scrollToLeft();
+         }, this)
+     }
     this.node.active = false;
     }
 
