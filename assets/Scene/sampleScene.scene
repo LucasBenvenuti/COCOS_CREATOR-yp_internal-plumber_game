@@ -667,7 +667,7 @@
     "_priority": 1073741824,
     "_fov": 45,
     "_fovAxis": 0,
-    "_orthoHeight": 734.6341463414634,
+    "_orthoHeight": 731.9254658385094,
     "_near": 1,
     "_far": 2000,
     "_color": {
@@ -5266,7 +5266,7 @@
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": -23.158,
-      "y": 82.74,
+      "y": 126.385,
       "z": 0
     },
     "_lrot": {
@@ -5387,7 +5387,7 @@
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 0,
-      "y": -281.947,
+      "y": -213.704,
       "z": 0
     },
     "_lrot": {
@@ -5500,7 +5500,7 @@
     "_left": 0,
     "_right": 0,
     "_top": 0,
-    "_bottom": -6.947000000000003,
+    "_bottom": 61.29599999999999,
     "_horizontalCenter": 0,
     "_verticalCenter": 0,
     "_isAbsLeft": true,
@@ -5658,7 +5658,7 @@
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": -25.473,
-      "y": 82.74,
+      "y": 94.114,
       "z": 0
     },
     "_lrot": {
@@ -5779,7 +5779,7 @@
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 0,
-      "y": -293.526,
+      "y": -213.704,
       "z": 0
     },
     "_lrot": {
@@ -5892,7 +5892,7 @@
     "_left": 0,
     "_right": 0,
     "_top": 0,
-    "_bottom": -18.52600000000001,
+    "_bottom": 61.29599999999999,
     "_horizontalCenter": 0,
     "_verticalCenter": 0,
     "_isAbsLeft": true,
@@ -6171,7 +6171,7 @@
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 0,
-      "y": -293.526,
+      "y": -213.704,
       "z": 0
     },
     "_lrot": {
@@ -6284,7 +6284,7 @@
     "_left": 0,
     "_right": 0,
     "_top": 0,
-    "_bottom": -18.52600000000001,
+    "_bottom": 61.29599999999999,
     "_horizontalCenter": 0,
     "_verticalCenter": 0,
     "_isAbsLeft": true,
@@ -6563,7 +6563,7 @@
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 0,
-      "y": -293.526,
+      "y": -213.704,
       "z": 0
     },
     "_lrot": {
@@ -6676,7 +6676,7 @@
     "_left": 0,
     "_right": 0,
     "_top": 0,
-    "_bottom": -18.52600000000001,
+    "_bottom": 61.29599999999999,
     "_horizontalCenter": 0,
     "_verticalCenter": 0,
     "_isAbsLeft": true,
@@ -6955,7 +6955,7 @@
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 0,
-      "y": -250.937,
+      "y": -213.704,
       "z": 0
     },
     "_lrot": {
@@ -7032,10 +7032,10 @@
     "_string": "O jogo inicia com um contador de 20 segundos, esse tempo é o que você tem antes dos grãos começarem a passar pelos canos.",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
-    "_actualFontSize": 89,
-    "_fontSize": 100,
+    "_actualFontSize": 76,
+    "_fontSize": 75,
     "_fontFamily": "Arial",
-    "_lineHeight": 160,
+    "_lineHeight": 100,
     "_overflow": 2,
     "_enableWrapText": true,
     "_font": {
@@ -7739,7 +7739,7 @@
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 0,
-      "y": -262.169,
+      "y": -213.704,
       "z": 0
     },
     "_lrot": {
@@ -7852,7 +7852,7 @@
     "_left": 0,
     "_right": 0,
     "_top": 0,
-    "_bottom": -18.668999999999983,
+    "_bottom": 29.795999999999992,
     "_horizontalCenter": 0,
     "_verticalCenter": 0,
     "_isAbsLeft": true,
