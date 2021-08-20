@@ -26,8 +26,8 @@ export class DataController extends Component {
         }
         this.cookiesEnabled = navigator.cookieEnabled;
         if(navigator.cookieEnabled){
-            if(localStorage.getItem('playerWin') == null){
-                localStorage.setItem('playerWin', 'false');
+            if(localStorage.getItem('plumber_playerWin') == null){
+                localStorage.setItem('plumber_playerWin', 'false');
             }
             console.log("Coookies enabled, user data will be saved");
         }else{
@@ -39,7 +39,7 @@ export class DataController extends Component {
 
     public checkIfLevelIsBlocked(index: number): boolean{
         if(this.cookiesEnabled){
-            var keyString = 'level_'+index+'_Blocked';
+            var keyString = 'plumber_level_'+index+'_Blocked';
             var valueOnIndex = localStorage.getItem(keyString.toString());
             if(valueOnIndex == 'true'){
                 return true
@@ -57,7 +57,7 @@ export class DataController extends Component {
 
     public unblockLevel(indexLevel: number){
         if(this.cookiesEnabled){
-            var keyString = 'level_'+indexLevel+'_Blocked';
+            var keyString = 'plumber_plumber_level_'+indexLevel+'_Blocked';
             localStorage.setItem(keyString.toString(), 'false');
         }else{
             if(this.levelIsBlocked[indexLevel]){
@@ -68,12 +68,12 @@ export class DataController extends Component {
 
     setupBlockedLevels(){
         if(this.cookiesEnabled){
-            if(localStorage.getItem('level_0_Blocked') == null){
-                localStorage.setItem('level_0_Blocked', 'false');
-                localStorage.setItem('level_1_Blocked', 'true');
-                localStorage.setItem('level_2_Blocked', 'true');
-                localStorage.setItem('level_3_Blocked', 'true');
-                localStorage.setItem('level_4_Blocked', 'true');
+            if(localStorage.getItem('plumber_level_0_Blocked') == null){
+                localStorage.setItem('plumber_level_0_Blocked', 'false');
+                localStorage.setItem('plumber_level_1_Blocked', 'true');
+                localStorage.setItem('plumber_level_2_Blocked', 'true');
+                localStorage.setItem('plumber_level_3_Blocked', 'true');
+                localStorage.setItem('plumber_level_4_Blocked', 'true');
             }
         }else{
             this.levelIsBlocked[0] = false;
@@ -86,7 +86,7 @@ export class DataController extends Component {
 
     playerWinFunction(){
         if(this.cookiesEnabled){
-            localStorage.setItem('playerWin', 'true');
+            localStorage.setItem('plumber_playerWin', 'true');
         }else{
             this.playerWin =  true;
         }
@@ -95,7 +95,7 @@ export class DataController extends Component {
 
     checkIfPlayerWin():boolean{
         if(this.cookiesEnabled){
-            var playerWinData = localStorage.getItem('playerWin');
+            var playerWinData = localStorage.getItem('plumber_playerWin');
             if(playerWinData == 'true'){
                 return true
             }else{

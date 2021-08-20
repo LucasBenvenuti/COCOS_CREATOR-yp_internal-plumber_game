@@ -36,9 +36,12 @@ export class ButtonsHelper extends Component {
         find("Canvas")
             ?.getComponentsInChildren(Button)
             .forEach((btn) => {
-                btn.transition = 3;
-                btn.duration = transitionDuration;
-                btn.zoomScale = transitionZoomScale;
+                if(!btn.node.name.match('Blocked')){
+                    btn.transition = 3;
+                    btn.duration = transitionDuration;
+                    btn.zoomScale = transitionZoomScale;
+
+                }
             });
     }
 

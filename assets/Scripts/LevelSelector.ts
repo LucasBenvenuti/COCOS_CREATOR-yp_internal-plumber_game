@@ -1,5 +1,5 @@
 
-import { _decorator, Component, Node, SystemEventType, Button, Sprite, Color } from 'cc';
+import { _decorator, Component, Node, SystemEventType, Button, Sprite, Color, tween, Vec3 } from 'cc';
 import { AudioController } from './AudioController';
 import { ButtonsHelper } from './ButtonsHelper';
 import { DataController } from './DataController';
@@ -14,6 +14,9 @@ export class LevelSelector extends Component {
 
     @property([Button])
     levelButton : Button[] = [];
+
+    @property([Button])
+    lockedButtons : Button[] = [];
 
     blockedSpriteNode: Node[] = [];
 
@@ -34,15 +37,18 @@ export class LevelSelector extends Component {
     }
 
     start(){
+
+        this.leftBtn.on(SystemEventType.TOUCH_START, this.clickLeftButton, this);
+        this.rightBtn.on(SystemEventType.TOUCH_START, this.clickRightButton, this);
         if(ButtonsHelper.instance){
-            ButtonsHelper.instance.setEventFunction(this.leftBtn, () =>{
-            this.clickLeftButton();
-            console.log("Left");
-        }, this);
-            ButtonsHelper.instance.setEventFunction(this.rightBtn, () =>{
-            this.clickRightButton();
-            console.log("Right");
-        }, this);
+        //     ButtonsHelper.instance.setEventFunction(this.leftBtn, () =>{
+        //     this.clickLeftButton();
+        //     console.log("Left");
+        // }, this);
+        //     ButtonsHelper.instance.setEventFunction(this.rightBtn, () =>{
+        //     this.clickRightButton();
+        //     console.log("Right");
+        // }, this);
 
         for(let i = 0; i < this.levelButton.length; i++){
             ButtonsHelper.instance.setEventFunction(this.levelButton[i].node, () =>{
@@ -107,7 +113,6 @@ export class LevelSelector extends Component {
             this.levelContainerIndex++;
         }, 80);
 
-        this.rightBtn.resumeSystemEvents(true);
     }
     
     clickLeftButton(){
@@ -130,7 +135,6 @@ export class LevelSelector extends Component {
             this.levelContainerIndex--;
         }, 80);
 
-        this.leftBtn.resumeSystemEvents(true);
     }
 
     //colocar o index do som de troca de paginas
@@ -140,6 +144,56 @@ export class LevelSelector extends Component {
         }else{
             console.log("Audio Controller dont exist.");
         }
+    }
+
+    playLockedLevelAudioSource(event, customEventData){
+        var self = this;
+        let index = parseInt(customEventData);
+
+        tween(self.lockedButtons[index].node.children[0]).to(0.15, {
+            eulerAngles: new Vec3(0,0, 17) 
+        }, {
+            easing: "bounceInOut",
+            onStart: ()=> {
+                // self.lockedButtons[index].interactable = false;
+
+                if(AudioController.instance){            
+                    AudioController.instance.playAudioSource(5);
+                }else{
+                    console.log("Audio Controller dont exist.");
+                }
+            },
+            onComplete: ()=> {
+                tween(self.lockedButtons[index].node.children[0]).to(0.125, {
+                    eulerAngles: new Vec3(0,0, -8) 
+                }, {
+                    easing: 'bounceInOut',
+                    onStart: ()=> {
+                    },
+                    onComplete: ()=> {
+                        tween(self.lockedButtons[index].node.children[0]).to(0.125, {
+                            eulerAngles: new Vec3(0,0, 3) 
+                        }, {
+                            easing: "bounceInOut",
+                            onStart: ()=> {
+                            },
+                            onComplete: ()=> {
+                                tween(self.lockedButtons[index].node.children[0]).to(0.1, {
+                                    eulerAngles: new Vec3(0,0, 0) 
+                                }, {
+                                    easing: "bounceInOut",
+                                    onStart: ()=> {
+                                    },
+                                    onComplete: ()=> {
+                                        self.lockedButtons[index].interactable = true;
+                                    }
+                                }).start();
+                            }
+                        }).start();
+                    }
+                }).start();
+            }
+        }).start();
     }
 }
 
