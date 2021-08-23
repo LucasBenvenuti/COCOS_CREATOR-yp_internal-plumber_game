@@ -29,6 +29,11 @@ export class TimerController extends Component {
     {
         DataController.instance.timeIsRunning = true;
         this.fixedStartTime = this.startTime;
+        if(DataController.instance.levelIndex >= 2){
+            this.startTime = this.startTime + 10;
+            this.fixedStartTime = this.startTime;
+            
+        }
     }
 
     update (deltaTime: number) {

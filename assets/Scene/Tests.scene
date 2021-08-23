@@ -888,7 +888,7 @@
     "_priority": 1073741824,
     "_fov": 45,
     "_fovAxis": 0,
-    "_orthoHeight": 540,
+    "_orthoHeight": 767.6847290640394,
     "_near": 1,
     "_far": 2000,
     "_color": {
@@ -10295,7 +10295,7 @@
     },
     "_enabled": true,
     "__prefab": null,
-    "startTime": 20,
+    "startTime": 30,
     "timerText": {
       "__id__": 389
     },

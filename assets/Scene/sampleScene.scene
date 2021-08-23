@@ -667,7 +667,7 @@
     "_priority": 1073741824,
     "_fov": 45,
     "_fovAxis": 0,
-    "_orthoHeight": 540,
+    "_orthoHeight": 767.6847290640394,
     "_near": 1,
     "_far": 2000,
     "_color": {
@@ -9795,7 +9795,7 @@
         "__id__": 639
       }
     ],
-    "_active": false,
+    "_active": true,
     "_components": [
       {
         "__id__": 644
@@ -17088,7 +17088,7 @@
         "__id__": 655
       }
     ],
-    "_active": false,
+    "_active": true,
     "_components": [
       {
         "__id__": 663
@@ -17638,7 +17638,7 @@
         "__id__": 680
       }
     ],
-    "_active": false,
+    "_active": true,
     "_components": [
       {
         "__id__": 697
