@@ -57,7 +57,7 @@ export class DataController extends Component {
 
     public unblockLevel(indexLevel: number){
         if(this.cookiesEnabled){
-            var keyString = 'plumber_plumber_level_'+indexLevel+'_Blocked';
+            var keyString = 'plumber_level_'+indexLevel+'_Blocked';
             localStorage.setItem(keyString.toString(), 'false');
         }else{
             if(this.levelIsBlocked[indexLevel]){
