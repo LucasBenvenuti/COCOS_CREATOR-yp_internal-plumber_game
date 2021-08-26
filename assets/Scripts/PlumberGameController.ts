@@ -51,7 +51,7 @@ export class PlumberGameController extends Component {
 
     gameIsRunning = true;
 
-    animationSpeed = 0.40;
+    animationSpeed = 1.8;
 
     onLoad() {
         var self = this;
@@ -91,7 +91,7 @@ export class PlumberGameController extends Component {
 
         if(self.plumberStartPipe)
         {
-            self.animationSpeed = 0.40;
+            self.animationSpeed = 1.8;
 
             if(self.currentPipeCollision)
                 self.currentPipeCollision.changeAnimSpeed();
@@ -107,7 +107,7 @@ export class PlumberGameController extends Component {
 
         if(self.plumberStartPipe_2)
         {
-            self.animationSpeed = 0.40;
+            self.animationSpeed = 1.8;
 
             if(self.currentPipeCollision_2)
                 self.currentPipeCollision_2.changeAnimSpeed();

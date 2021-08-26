@@ -129,7 +129,7 @@ export class FeedbackController extends Component {
         console.log("Back BTN");
         if(SceneController.instance){
             if(DataController.instance){
-                  DataController.instance.returningFromDefaultScene = true;
+                  DataController.instance.returningFromDefaultScene = false;
             }
             SceneController.instance.changeScene(this.menuSceneString);
         }else{
