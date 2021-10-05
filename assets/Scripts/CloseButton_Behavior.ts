@@ -16,7 +16,7 @@ export class CloseButtonBehavior extends Component {
         SceneController.instance.enabled = true;
 
         self.scheduleOnce(()=>{
-            window.location.href = "https://jogos-senar-ms.s3.amazonaws.com/plataforma/index.html";
+            window.location.href = "https://jogos.agrinhoms.com.br/plataforma/index.html";
         }, 0.6);
     }
 
