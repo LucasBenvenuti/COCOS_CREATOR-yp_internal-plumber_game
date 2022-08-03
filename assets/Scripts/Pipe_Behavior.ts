@@ -1,4 +1,5 @@
 import { _decorator, Component, Node, EventTouch, tween, Quat, CCFloat, Vec3, AnimationComponent } from 'cc';
+import { AudioController } from './AudioController';
 import { PipeCollider_Behavior } from './PipeCollider_Behavior';
 import { PlumberGameController } from './PlumberGameController';
 
@@ -18,6 +19,11 @@ export class Pipe_Behavior extends Component {
 
     @property(Boolean)
     lastPipe: Boolean = false;
+
+    @property(Number)
+    pathID: number = 0;
+
+    indexOnPlumberGameControllerArray = 0;
 
     canBeTouched = true;
 
@@ -53,6 +59,8 @@ export class Pipe_Behavior extends Component {
         let currentRotation = new Vec3(self.node.eulerAngles);
         let goToRotation_Z = new Vec3(currentRotation.x, currentRotation.y, currentRotation.z - 90);
 
+        AudioController.instance.playAudioSource(3);
+
         tween(currentRotation).to(0.5, goToRotation_Z, {
             easing: "cubicInOut",
             "onUpdate": (currentValue: Vec3)=> {
@@ -87,7 +95,7 @@ export class Pipe_Behavior extends Component {
     plumberInternalEnd_Normal() {
         var self = this;
 
-        console.log("NORMAL - FINISHED FRAMES - FUNCTION CALLED BY ANIMATION EVENT");
+        //console.log("NORMAL - FINISHED FRAMES - FUNCTION CALLED BY ANIMATION EVENT");
 
         if(self.invertedPipeCollider.pipe_Collision)
         {
@@ -96,13 +104,24 @@ export class Pipe_Behavior extends Component {
             if(invertedPipe.isLastPipe)
             {
                 invertedPipe.pipeBehavior.canBeTouched = false;
+
+                if(self.pathID == 0)
+                {
+                    PlumberGameController.instance.plumber_Completed = true;
+                }
+                else if(self.pathID == 1)
+                {
+                    PlumberGameController.instance.plumber_2_Completed = true;
+                }
+
                 PlumberGameController.instance.endPlumber(true);
             }
             else
             {
-                console.log("CONTINUE HERE WITH INVERTED!!!!");
+                //console.log("CONTINUE HERE WITH INVERTED!!!!");
                 self.invertedPipeCollider.pipe_Collision.startPipeAnimation();
             }
+            AudioController.instance.playAudioSource(4);
         }
         else
         {
@@ -113,23 +132,34 @@ export class Pipe_Behavior extends Component {
     
     plumberInternalEnd_Inverted() {
         var self = this;
-
-        console.log("INVERTED - FINISHED FRAMES - FUNCTION CALLED BY ANIMATION EVENT");
-
+        
+        //console.log("INVERTED - FINISHED FRAMES - FUNCTION CALLED BY ANIMATION EVENT");
+        
         if(self.normalPipeCollider.pipe_Collision)
         {
             let normalPipe = self.normalPipeCollider.pipe_Collision;
-
+            
             if(normalPipe.isLastPipe)
             {
                 normalPipe.pipeBehavior.canBeTouched = false;
+                
+                if(self.pathID == 0)
+                {
+                    PlumberGameController.instance.plumber_Completed = true;
+                }
+                else if(self.pathID == 1)
+                {
+                    PlumberGameController.instance.plumber_2_Completed = true;
+                }
+                
                 PlumberGameController.instance.endPlumber(true);
             }
             else
             {                
-                console.log("CONTINUE HERE WITH NORMAL!!!!");
+                //console.log("CONTINUE HERE WITH NORMAL!!!!");
                 self.normalPipeCollider.pipe_Collision.startPipeAnimation();
             }
+            AudioController.instance.playAudioSource(4);
         }
         else
         {

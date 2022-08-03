@@ -78,7 +78,7 @@ export class FeedbackController extends Component {
         DataController.instance.timeIsRunning = false;
 
         self.feedbackTitleText.string = "Parabéns!";
-        self.feedbackContentText.string = "Você encontrou todos os erros.";
+        self.feedbackContentText.string = "Você encontrou o caminho.";
         self.feedbackBalloonText.string = "Show!";
         self.feedbackSmileSprite.spriteFrame = this.feedbackSmileSpriteFrame[0];
         self.starsContainer.active = true;
@@ -106,7 +106,7 @@ export class FeedbackController extends Component {
         animation.play('fadeInScene');
 
         AudioController.instance.stopLowSecTimer();
-        AudioController.instance.playAudioSource(2);
+        // AudioController.instance.playAudioSource(2);
     }
     
     public playerFinishGame(){
@@ -129,7 +129,7 @@ export class FeedbackController extends Component {
         console.log("Back BTN");
         if(SceneController.instance){
             if(DataController.instance){
-                  DataController.instance.returningFromDefaultScene = true;
+                  DataController.instance.returningFromDefaultScene = false;
             }
             SceneController.instance.changeScene(this.menuSceneString);
         }else{

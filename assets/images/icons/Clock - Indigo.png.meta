@@ -2,7 +2,7 @@
   "ver": "1.0.21",
   "importer": "image",
   "imported": true,
-  "uuid": "36bfda9c-f91b-4a2b-978e-8a691ab8b00b",
+  "uuid": "327e0460-4aa3-4615-a8ae-bad0620f5c5b",
   "files": [
     ".png",
     ".json"
@@ -10,7 +10,7 @@
   "subMetas": {
     "6c48a": {
       "importer": "texture",
-      "uuid": "36bfda9c-f91b-4a2b-978e-8a691ab8b00b@6c48a",
+      "uuid": "327e0460-4aa3-4615-a8ae-bad0620f5c5b@6c48a",
       "displayName": "Clock - Indigo",
       "id": "6c48a",
       "name": "texture",
@@ -19,10 +19,10 @@
         "wrapModeT": "repeat",
         "minfilter": "linear",
         "magfilter": "linear",
-        "mipfilter": "linear",
+        "mipfilter": "none",
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "36bfda9c-f91b-4a2b-978e-8a691ab8b00b"
+        "imageUuidOrDatabaseUri": "327e0460-4aa3-4615-a8ae-bad0620f5c5b"
       },
       "ver": "1.0.21",
       "imported": true,
@@ -33,7 +33,7 @@
     },
     "f9941": {
       "importer": "sprite-frame",
-      "uuid": "36bfda9c-f91b-4a2b-978e-8a691ab8b00b@f9941",
+      "uuid": "327e0460-4aa3-4615-a8ae-bad0620f5c5b@f9941",
       "displayName": "Clock - Indigo",
       "id": "f9941",
       "name": "spriteFrame",
@@ -41,21 +41,21 @@
         "trimType": "auto",
         "trimThreshold": 1,
         "rotated": false,
-        "offsetX": -24,
-        "offsetY": -15,
-        "trimX": 78,
-        "trimY": 127,
-        "width": 387,
-        "height": 367,
-        "rawWidth": 591,
-        "rawHeight": 591,
+        "offsetX": -20.5,
+        "offsetY": -13,
+        "trimX": 65,
+        "trimY": 107,
+        "width": 341,
+        "height": 324,
+        "rawWidth": 512,
+        "rawHeight": 512,
         "borderTop": 0,
         "borderBottom": 0,
         "borderLeft": 0,
         "borderRight": 0,
         "packable": true,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "36bfda9c-f91b-4a2b-978e-8a691ab8b00b@6c48a",
+        "imageUuidOrDatabaseUri": "327e0460-4aa3-4615-a8ae-bad0620f5c5b@6c48a",
         "atlasUuid": ""
       },
       "ver": "1.0.9",
@@ -69,6 +69,6 @@
   "userData": {
     "hasAlpha": true,
     "type": "sprite-frame",
-    "redirect": "36bfda9c-f91b-4a2b-978e-8a691ab8b00b@f9941"
+    "redirect": "327e0460-4aa3-4615-a8ae-bad0620f5c5b@f9941"
   }
 }

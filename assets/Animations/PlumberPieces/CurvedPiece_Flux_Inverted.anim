@@ -1,7 +1,7 @@
 [
   {
     "__type__": "cc.AnimationClip",
-    "_name": "CurverPiece_Flux_Inverted",
+    "_name": "CurvedPiece_Flux_Inverted",
     "_objFlags": 0,
     "_native": "",
     "sample": 60,
@@ -45,31 +45,31 @@
           "keys": 0,
           "values": [
             {
-              "__uuid__": "a8a14d2d-ac85-4afc-a4ec-05140396b3d1@f9941",
+              "__uuid__": "fab559f6-85d3-4f86-83b5-0604561a28e6@f9941",
               "__expectedType__": "cc.SpriteFrame"
             },
             {
-              "__uuid__": "9ce1ca93-c794-446d-a4f1-a9cea4a4b922@f9941",
+              "__uuid__": "4f9c93d8-7ccd-4653-b987-8a0b87dcd8cc@f9941",
               "__expectedType__": "cc.SpriteFrame"
             },
             {
-              "__uuid__": "c9ac5070-1caa-443f-8116-00861c02a876@f9941",
+              "__uuid__": "158763dc-11bc-46ca-ac59-85614be86610@f9941",
               "__expectedType__": "cc.SpriteFrame"
             },
             {
-              "__uuid__": "8ca4ec2c-955d-4aee-84bd-b11808007a80@f9941",
+              "__uuid__": "649ca11c-8f5a-418f-8271-c08641ad6a1b@f9941",
               "__expectedType__": "cc.SpriteFrame"
             },
             {
-              "__uuid__": "426f2a26-90c8-4440-9db8-d75f9a050a54@f9941",
+              "__uuid__": "1506efed-64b0-4b59-9eb4-359920bbdb26@f9941",
               "__expectedType__": "cc.SpriteFrame"
             },
             {
-              "__uuid__": "5a437a27-71c0-48bc-8d73-9f7430da700c@f9941",
+              "__uuid__": "8ca4c4dc-25e4-4090-b1ae-0819d38bd8d9@f9941",
               "__expectedType__": "cc.SpriteFrame"
             },
             {
-              "__uuid__": "cc6ea953-0189-4c75-8094-5b0199ab48d2@f9941",
+              "__uuid__": "2553524f-28e2-40e1-a371-6f39be94d00c@f9941",
               "__expectedType__": "cc.SpriteFrame"
             }
           ],
@@ -78,7 +78,7 @@
       }
     ],
     "_commonTargets": [],
-    "_hash": 1131493224
+    "_hash": 4140525129
   },
   {
     "__type__": "cc.animation.ComponentPath",

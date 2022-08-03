@@ -1,7 +1,7 @@
 [
   {
     "__type__": "cc.AnimationClip",
-    "_name": "CurverPiece_Flux_Normal",
+    "_name": "CurvedPiece_Flux_Normal",
     "_objFlags": 0,
     "_native": "",
     "sample": 60,
@@ -45,31 +45,31 @@
           "keys": 0,
           "values": [
             {
-              "__uuid__": "a8a14d2d-ac85-4afc-a4ec-05140396b3d1@f9941",
+              "__uuid__": "fab559f6-85d3-4f86-83b5-0604561a28e6@f9941",
               "__expectedType__": "cc.SpriteFrame"
             },
             {
-              "__uuid__": "0e2ec6b0-5d1d-4a2d-9e28-6bbc5ecf405f@f9941",
+              "__uuid__": "eb06d58a-0aed-4c05-bb96-5dfb48211fca@f9941",
               "__expectedType__": "cc.SpriteFrame"
             },
             {
-              "__uuid__": "58eac770-2cbd-4402-81f6-9959310ed843@f9941",
+              "__uuid__": "17dd86f4-39e7-43f0-bab2-74940ad90f43@f9941",
               "__expectedType__": "cc.SpriteFrame"
             },
             {
-              "__uuid__": "97fb6a1d-49a8-4915-9ae3-8d09206d80a5@f9941",
+              "__uuid__": "64da9fc8-b7b5-47c2-8ccc-f71d1cee0ab0@f9941",
               "__expectedType__": "cc.SpriteFrame"
             },
             {
-              "__uuid__": "1e66af48-e640-4201-8024-82c22b543a24@f9941",
+              "__uuid__": "8ee16920-823a-4e89-8367-dd969d00af0e@f9941",
               "__expectedType__": "cc.SpriteFrame"
             },
             {
-              "__uuid__": "d0f1c83f-4320-4d3e-a0fb-adeefb39ef95@f9941",
+              "__uuid__": "94cecd37-30cb-4846-8ea9-82cd648a5b81@f9941",
               "__expectedType__": "cc.SpriteFrame"
             },
             {
-              "__uuid__": "6fcf2025-ae5c-42c8-9f59-3601c7372205@f9941",
+              "__uuid__": "6de8e6d9-58f4-4623-b53e-922e4c61e864@f9941",
               "__expectedType__": "cc.SpriteFrame"
             }
           ],
@@ -78,7 +78,7 @@
       }
     ],
     "_commonTargets": [],
-    "_hash": 3561746847
+    "_hash": 112491771
   },
   {
     "__type__": "cc.animation.ComponentPath",

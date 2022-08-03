@@ -1,8 +1,9 @@
 
-import { _decorator, Component, Node, Label, CCInteger } from 'cc';
+import { _decorator, Component, Node, Label, CCInteger, Sprite } from 'cc';
 import { AudioController } from './AudioController';
 import { DataController } from './DataController';
 import { FeedbackController } from './FeedbackController';
+import { PlumberGameController } from './PlumberGameController';
 const { ccclass, property } = _decorator;
 
 @ccclass('TimerController')
@@ -14,23 +15,32 @@ export class TimerController extends Component {
     @property(Label)
     timerText: Label;
 
+    @property(Sprite)
+    timerProgressSprite: Sprite;
+
     @property(FeedbackController)
     feedbackContainer: FeedbackController;
 
     // timeIsRunning: boolean = true;
 
     countdownStartBool = false;
-    
+    fixedStartTime: number;
     start ()
     {
         DataController.instance.timeIsRunning = true;
+        this.fixedStartTime = this.startTime;
+        if(DataController.instance.levelIndex >= 2){
+            this.startTime = this.startTime + 10;
+            this.fixedStartTime = this.startTime;
+            
+        }
     }
 
     update (deltaTime: number) {
         if(DataController.instance.timeIsRunning){
             this.startTime -= deltaTime;
             this.timerText.string = Math.round(this.startTime).toString();
-
+            this.fillProgressTimerSprite();
             if (this.startTime <= 5.5 && !this.countdownStartBool) {
                 this.countdownStartBool = true;
 
@@ -40,9 +50,15 @@ export class TimerController extends Component {
             if(this.startTime <= 0){
                 this.timerText.string = "0";
                 DataController.instance.timeIsRunning = false;
-                this.feedbackContainer.playerLose();
+                PlumberGameController.instance.startPlumberWhenTimerGoesZero();
+                //this.feedbackContainer.playerLose();
             }
         }
+    }
+
+    public fillProgressTimerSprite(){
+        var timerNumber = Math.round(this.startTime) / this.fixedStartTime;
+        this.timerProgressSprite.fillRange = timerNumber;
     }
     
 }

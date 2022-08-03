@@ -23,14 +23,14 @@ export class DescriptionController extends Component {
     }
 
     start(){
-        if(ButtonsHelper.instance){
-            ButtonsHelper.instance.setEventFunction(this.openButtonNode, () =>{
-            this.showDescription();
-        }, this)
-        ButtonsHelper.instance.setEventFunction(this.closeButtonNode, () =>{
-            this.hideDescription();
-        }, this)
-    }
+    //     if(ButtonsHelper.instance){
+    //         ButtonsHelper.instance.setEventFunction(this.openButtonNode, () =>{
+    //         this.showDescription();
+    //     }, this)
+    //     ButtonsHelper.instance.setEventFunction(this.closeButtonNode, () =>{
+    //         this.hideDescription();
+    //     }, this)
+    // }
     this.node.active = false;
     
     }
